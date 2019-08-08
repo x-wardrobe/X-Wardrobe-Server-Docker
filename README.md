@@ -21,3 +21,16 @@ the offical web is https://golang.org/
 ```shell
 docker build -f Dockerfile -t xwardrobe:1.0 .
 ```
+
+## STEP 5 Execute run_xwardrobe.sh script to boot the xwardrobe:1.0 and mysql containers
+```shell
+./run_xwardrobe.sh
+```
+
+## STEP 6 After the containers boot up successfully , execute command
+```shell
+docker exec -i x-mysql sh -c 'exec mysql -uroot -p"mysql1234"' < $PWD/xwardrobe_user0.sql
+```
+to dumps the mysql datebase
+
+**note:make sure the containers of xwardrobe:1.0 and mysql is running and mysql has completed initialization**
